@@ -1,5 +1,5 @@
 import { type FastifyInstance } from "fastify";
-import v1Routes from "@/routes/v1/router";
+import v2Routes from "@/routes/v2/router";
 
 export default async function routes(fastify: FastifyInstance) {
 	fastify.get("/", async () => {
@@ -8,7 +8,7 @@ export default async function routes(fastify: FastifyInstance) {
 		};
 	});
 
-	await fastify.register(v1Routes, {
-		prefix: "/v1",
+	await fastify.register(v2Routes, {
+		prefix: "/v2",
 	});
 }
