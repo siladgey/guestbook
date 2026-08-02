@@ -1,0 +1,32 @@
+{
+	"name": "GuestBook",
+	"version": "0.1.0",
+	"description": "A simple GuestBook application built with Node.js and TypeScript.",
+	"keywords": [
+		"guestbook",
+		"api"
+	],
+	"homepage": "https://github.com/siladgey/guestbook#readme",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/siladgey/guestbook.git"
+	},
+	"private": true,
+	"type": "module",
+	"scripts": {
+		"start": "node dist/server.js",
+		"build": "tsc",
+		"dev": "tsx watch src/server.ts"
+	},
+	"dependencies": {
+		"fastify": "^5.11.0"
+	},
+	"devDependencies": {
+		"@types/node": "^26.1.2",
+		"dotenv": "^17.4.2",
+		"eslint": "^10.8.0",
+		"prettier": "^3.9.6",
+		"tsx": "^4.23.4",
+		"typescript": "^7.0.2"
+	}
+}
