@@ -14,10 +14,11 @@
 	"private": true,
 	"type": "module",
 	"scripts": {
-		"start": "node dist/server.js",
-		"build": "tsc",
+		"build": "tsup",
 		"dev": "tsx watch src/server.ts",
-		"prisma": "prisma studio"
+		"prisma": "prisma studio",
+		"start": "node dist/server.js",
+		"typecheck": "tsc --noEmit"
 	},
 	"dependencies": {
 		"@prisma/adapter-pg": "^7.9.1",
@@ -34,6 +35,7 @@
 		"eslint": "^10.8.0",
 		"prettier": "^3.9.6",
 		"prisma": "^7.9.1",
+		"tsup": "^8.5.1",
 		"tsx": "^4.23.4",
 		"typescript": "^7.0.2"
 	}
