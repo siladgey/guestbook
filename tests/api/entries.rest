@@ -1,0 +1,42 @@
+@hostname = localhost
+@port = 3000
+@host = {{hostname}}:{{port}}
+@apiVersion = api/v2
+@contentType = application/json
+
+# Show all posts on homepage
+# GET /api/v2/entries
+GET http://{{host}}/{{apiVersion}}/entries HTTP/1.1
+###
+
+# Show a single post
+# GET /api/v2/entries/:slug
+GET http://{{host}}/{{apiVersion}}/entries/lorem-ipsum-is-not-simply-random-text-yDniqc HTTP/1.1
+###
+
+# Create a new post
+# POST /api/v2/entries
+POST http://{{host}}/{{apiVersion}}/entries HTTP/1.1
+Content-Type: {{contentType}}
+
+{
+    "title": "Lorem Ipsum is not simply random text",
+    "content": "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.",
+    "author": "Richard Szilagyi"
+}
+###
+
+# Edit the content of a post
+# POST /api/v2/entries/:slug
+# POST http://{{host}}/{{apiVersion}}/entries/lorem-ipsum-is-not-simply-random-text HTTP/1.1
+# Content-Type: {{contentType}}
+#
+# {
+#     "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+# }
+###
+
+# Delete a whole post
+# DELETE /api/v2/entries/id
+DELETE http://{{host}}/{{apiVersion}}/entries/0d6daa74-3c71-4363-8b65-6f88013d7428 HTTP/1.1
+###

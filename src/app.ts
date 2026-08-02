@@ -5,4 +5,4 @@ export const app = Fastify({
 	logger: true,
 });
 
-await app.register(routes);
+await app.register(routes, { prefix: "/api" });

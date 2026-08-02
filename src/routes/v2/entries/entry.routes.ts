@@ -57,16 +57,16 @@ export default async function guestbookRoutes(fastify: FastifyInstance) {
 		return reply.code(201).send(entry);
 	});
 
-	fastify.delete("/:slug", async (request) => {
+	fastify.delete("/:id", async (request) => {
 		const params = z
 			.object({
-				slug: z.string(),
+				id: z.string(),
 			})
 			.parse(request.params);
 
 		return prisma.guestbookEntry.delete({
 			where: {
-				slug: params.slug,
+				id: params.id,
 			},
 		});
 	});
